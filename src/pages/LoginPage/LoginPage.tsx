@@ -29,9 +29,9 @@ export function LoginPage() {
     <div style={{ padding: 16 }}>
       <Title level="1">Добро пожаловать!</Title>
       <p>Для начала нажмите кнопку ниже</p>
-      <Button onClick={handleLogin} size="l" mode="primary">
-        Войти через Telegram
-      </Button>
+      <Button onClick={handleLogin} size="l" mode="filled">
+  Войти через Telegram
+</Button>
     </div>
   );
 }

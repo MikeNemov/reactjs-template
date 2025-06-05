@@ -1,24 +1,18 @@
-import { useMemo } from 'react';
-import { Navigate, Route, Routes, HashRouter } from 'react-router-dom';
-import { retrieveLaunchParams, useSignal, isMiniAppDark } from '@telegram-apps/sdk-react';
-import { AppRoot } from '@telegram-apps/telegram-ui';
+import React from 'react';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
-import { routes } from '@/navigation/routes.tsx';
+function DummyPage({ text }: { text: string }) {
+  return <div style={{ padding: 20, color: 'green' }}>{text}</div>;
+}
 
 export function App() {
-  const lp = useMemo(() => retrieveLaunchParams(), []);
-  const isDark = useSignal(isMiniAppDark);
-
   return (
-    <AppRoot
-      appearance={isDark ? 'dark' : 'light'}
-      platform={['macos', 'ios'].includes(lp.tgWebAppPlatform) ? 'ios' : 'base'}
-    >
-      <HashRouter>
-        <Routes>
-  <Route path="*" element={<div style={{ color: 'red' }}>App is working! Current path: {window.location.hash}</div>} />
-</Routes>
-      </HashRouter>
-    </AppRoot>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<DummyPage text="LoginPage placeholder" />} />
+        <Route path="/home" element={<DummyPage text="HomePage placeholder" />} />
+        <Route path="*" element={<DummyPage text="404: Страница не найдена" />} />
+      </Routes>
+    </HashRouter>
   );
 }

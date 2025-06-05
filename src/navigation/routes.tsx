@@ -6,7 +6,6 @@ import { LaunchParamsPage } from '@/pages/LaunchParamsPage.tsx';
 import { ThemeParamsPage } from '@/pages/ThemeParamsPage.tsx';
 import { TONConnectPage } from '@/pages/TONConnectPage/TONConnectPage';
 import AddContractor from '@/components/AddContractor'; // <-- импорт
-import { ContractorAddPage } from '@/pages/ContractorAddPage';
 import { LoginPage } from '@/pages/LoginPage/LoginPage';
 import { HomePage } from '@/pages/HomePage/HomePage';
 

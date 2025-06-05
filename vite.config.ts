@@ -3,7 +3,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import react from '@vitejs/plugin-react-swc';
 
 export default defineConfig({
-  base: './', // важнейшее, чтобы пути были относительными
+  base: '/', // <--- ИЗМЕНЕНО ЗДЕСЬ
   plugins: [
     react(),
     tsconfigPaths(),

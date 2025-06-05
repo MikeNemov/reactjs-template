@@ -16,10 +16,8 @@ export function App() {
     >
       <HashRouter>
         <Routes>
-{routes.map(({ path, Component }) => (
-  <Route key={path} path={path} element={<Component />} />
-))}          <Route path="*" element={<Navigate to="/"/>}/>
-        </Routes>
+  <Route path="*" element={<div style={{ color: 'red' }}>App is working! Current path: {window.location.hash}</div>} />
+</Routes>
       </HashRouter>
     </AppRoot>
   );
